@@ -16,7 +16,7 @@ export function Navbar({ query, onQueryChange, wishlistCount, onOpenWishlist }: 
           <img
             src="/logo.jpeg"
             alt="Ledger Logo"
-            className="h-10 w-10 rounded-full"
+            className="h-10 w-10 object-cover rounded-full"
           />
           <span className="text-2xl font-bold text-white">
             WishLedger

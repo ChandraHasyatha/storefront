@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
 import { products, categories } from './data/products';
 import { Navbar } from './components/Navbar';
+import { Hero } from './components/Hero';
+import { Footer } from './components/Footer';
 import { CategoryFilter } from './components/CategoryFilter';
 import { ProductCard } from './components/ProductCard';
 import { LoadingGrid, NoResultsState } from './components/States';
@@ -56,10 +58,17 @@ function StoreContent() {
         onOpenWishlist={() => setDrawerOpen(true)}
       />
 
-      <main className="mx-auto max-w-6xl px-4 py-6 sm:px-6">
+      <Hero
+        productCount={products.length}
+        onShopNow={() =>
+          document.getElementById('collection')?.scrollIntoView({ behavior: 'smooth' })
+        }
+      />
+
+      <main id="collection" className="mx-auto max-w-6xl px-4 py-8 sm:px-6 scroll-mt-20">
         <div className="mb-6 flex flex-col gap-3">
           <div>
-            <h1 className="font-display text-2xl text-text">Small-batch goods, chosen carefully</h1>
+            <h2 className="font-display text-xl text-text">The collection</h2>
             <p className="mt-1 text-sm text-text-muted">{filtered.length} of {products.length} products</p>
           </div>
           <CategoryFilter categories={categories} selected={category} onSelect={setCategory} />
@@ -76,7 +85,10 @@ function StoreContent() {
                 key={product.id}
                 product={product}
                 inWishlist={activeListId ? isInWishlist(activeListId, product.id) : false}
-                onToggleWishlist={() => activeListId && toggleItem(activeListId, product.id)}
+                onToggleWishlist={() =>
+                  activeListId && toggleItem(activeListId, product.id)
+                }
+               
               />
             ))}
           </div>
@@ -95,6 +107,8 @@ function StoreContent() {
       <MergeModal open={mergeOpen} onClose={() => setMergeOpen(false)} />
 
       <ToastStack />
+
+      <Footer />
     </div>
   );
 }

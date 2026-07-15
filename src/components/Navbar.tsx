@@ -13,7 +13,7 @@ export function Navbar({ query, onQueryChange, wishlistCount, onOpenWishlist }: 
     <header className="sticky top-0 z-30 border-b border-border bg-bg/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-3 px-4 py-3 sm:px-6">
         <a href="#" className="font-display text-xl tracking-tight text-text shrink-0">
-          Ledger
+          WishLedger
         </a>
 
         <div className="order-3 w-full sm:order-2 sm:w-auto sm:flex-1">

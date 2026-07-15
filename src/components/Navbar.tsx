@@ -12,9 +12,16 @@ export function Navbar({ query, onQueryChange, wishlistCount, onOpenWishlist }: 
   return (
     <header className="sticky top-0 z-30 border-b border-border bg-bg/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-3 px-4 py-3 sm:px-6">
-        <a href="#" className="font-display text-xl tracking-tight text-text shrink-0">
-          WishLedger
-        </a>
+        <div className="flex items-center gap-2">
+          <img
+            src="/logo.jpeg"
+            alt="Ledger Logo"
+            className="h-10 w-10 rounded-full"
+          />
+          <span className="text-2xl font-bold text-white">
+            WishLedger
+          </span>
+        </div>
 
         <div className="order-3 w-full sm:order-2 sm:w-auto sm:flex-1">
           <SearchBar value={query} onChange={onQueryChange} />

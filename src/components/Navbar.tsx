@@ -13,10 +13,12 @@ export function Navbar({ query, onQueryChange, wishlistCount, onOpenWishlist }: 
     <header className="sticky top-0 z-30 border-b border-border bg-bg/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-3 px-4 py-3 sm:px-6">
         <div className="flex items-center gap-2">
+        
+        
           <img
-            src="/logo.jpeg"
-            alt="Ledger Logo"
-            className="h-10 w-10 object-cover rounded-full"
+            src={`${import.meta.env.BASE_URL}logo.jpeg`}
+            alt="WishLedger Logo"
+            className="h-12 w-12 rounded-full object-cover bg-white p-1"
           />
           <span className="text-2xl font-bold text-white">
             WishLedger
